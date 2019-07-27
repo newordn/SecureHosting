@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value="/")
 class Home {
     public Home()
     {
@@ -23,5 +22,16 @@ class Home {
     public String getDetail(@PathVariable Long id)
     {
         return "detail/detail";
+    }
+
+    @GetMapping("/about")
+    public String about(){
+        return "home/about";
+    }
+
+
+    @GetMapping("/services")
+    public String services(){
+        return "home/service";
     }
 }
