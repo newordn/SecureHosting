@@ -1,17 +1,17 @@
 package com.neword.demo.controllers;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping(value="/payment")
+@Controller
 public class Payment {
 
-    @GetMapping(value="/")
+    @GetMapping(value="/payment")
     public String getPaymentPage()
     {
         return "payment/payment";
     }
-    @GetMapping(value="/success")
+    @GetMapping(value="/payment_success")
     public String paymentSuccess() // the redirect page
     {
         return "payment/paymentSuccess";

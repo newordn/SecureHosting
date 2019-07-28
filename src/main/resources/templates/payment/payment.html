@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Secure Hosting. The best solution for your hosting and security</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Cloud 83 - hosting template ">
+    <meta name="keywords" content="cloud, hosting, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/magnific-popup.css"/>
+    <link rel="stylesheet" href="css/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/animate.css"/>
+
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+
+    <script
+            src="https://www.paypal.com/sdk/js?client-id=AX1bgCA9UyX9fwXC1EuDBva_xyHGr5YIUO5T_T0xLT_WcUEewEkW8Il5sZ0yzcJ7FPGVpR7YKi9-Q5mi ">
+    </script>
+
+</head>
+<body>
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+
+
+<!-- header -->
+<div th:replace="fragments/navBar.html::navBar"></div>
+<!-- header -->
+
+
+<!-- Page Top section -->
+<section class="page-top-section set-bg" data-setbg="img/page-top-bg/3.jpg">
+    <div class="container">
+        <h2>Payment</h2>
+    </div>
+</section>
+<!-- Page Top section end -->
+
+<!-- paypal buton -->
+<div class="row justify-content-center align-items-center" id="payPal" style="height:100vh">
+
+    <div id="paypal-button-container" class="row justify-content-center">
+
+    </div>
+
+</div>
+<!-- paypal buton -->
+
+
+<!-- Footer section -->
+<div th:replace="fragments/footer.html::footer"></div>
+<!-- Footer section end -->
+
+
+<!--====== Javascripts & Jquery ======-->
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/circle-progress.min.js"></script>
+<script src="js/main.js"></script>
+<script th:src="@{js/paypal.js}"></script>
+
+</body>
+</html>
