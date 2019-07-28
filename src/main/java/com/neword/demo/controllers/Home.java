@@ -34,4 +34,9 @@ class Home {
     public String services(){
         return "home/service";
     }
+
+    @GetMapping("/contact")
+    public String contact(){
+        return "home/contact";
+    }
 }
