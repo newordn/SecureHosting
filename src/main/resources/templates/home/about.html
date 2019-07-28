@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zxx" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>SecureHosting</title>
+	<title>Secure Hosting. The best solution for your hosting and security</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="Cloud 83 - hosting template ">
 	<meta name="keywords" content="cloud, hosting, creative, html">
@@ -34,32 +34,10 @@
 		<div class="loader"></div>
 	</div>
 
-	<!-- Header section -->
-	<header class="header-section">
-		<div class="container">
-			<a th:href="@{/}" class="site-logo">
-				<img th:src="@{/img/logo.png}" alt="logo">
-			</a>
-			<!-- Switch button -->
-			<div class="nav-switch">
-				<div class="ns-bar"></div>
-			</div>
-			<div class="header-right">
-				<ul class="main-menu">
-					<li><a th:href="@{/}">Home</a></li>
-					<li><a th:href="@{/about}">About us</a></li>
-					<li><a th:href="@{/services}">Services</a></li>
-					<li><a th:href="@{/contact}">Contact</a></li>
-				</ul>
-				<div class="header-btns">
-					<a href="#" class="site-btn sb-c1">Support <span>24/7</span></a>
-					<a href="#" class="site-btn sb-c2">Login</a>
-					<a href="#" class="site-btn sb-c3">Register</a>
-				</div>
-			</div>
-		</div>
-	</header>
-	<!-- Header section end -->
+
+	<!-- header -->
+	<div th:replace="fragments/navBar.html::navBar"></div>
+	<!-- header -->
 
 
 	<!-- Page Top section -->
@@ -86,8 +64,12 @@
 					</div>
 				</div>
 				<div class="col-lg-6 about-intro-text">
-					<p>Phasellus vehicula tempus orci vel consequat. Nullam lorem sem, viverra a rutrum sed, gravida mattis magna. Suspendisse vitae commodo quam. Quisque a enim et ante vulputate finibus nec laoreet ipsum. Etiam lobortis erat vel ullamcorper tristique. Morbi pellentesque orci augue, quis finibus justo accumsan nec. Donec imperdiet sodales lectus sed consectetur. Mauris dignissim.Morbi pellentesque orci augue, quis finibus justo accumsan nec. Donec imperdiet sodales lectus sed consectetur. Mauris dignissim</p>
-					<div class="site-btn sb-c3">Read more</div>
+					<p>
+						We are the only company to offer a lifetime discount!
+						The renewal fee of your package will be the same as the original
+						price! As long as you stay with us, take advantage of our
+						great offers at low prices. No hidden fees, no rate changes</p>
+					<div class="site-btn sb-c3">Watch</div>
 				</div>
 			</div>
 		</div>
@@ -109,7 +91,10 @@
 						<img th:src="@{/img/what/1.jpg}" alt="">
 						<div class="wc-text">
 							<h5>Web Hosting</h5>
-							<p>Phasellus vehicula tempus orci vel consequat. Nullam lorem sem, viverra a rutrum sed, gravida mattis magna. Suspendisse vitae commodo.</p>
+							<p>
+								We are the only company to offer a lifetime discount!
+								The renewal fee of your package will be the same as the original
+								price!</p>
 						</div>
 					</div>
 				</div>
@@ -118,7 +103,7 @@
 						<img th:src="@{/img/what/2.jpg}" alt="">
 						<div class="wc-text">
 							<h5>The Business</h5>
-							<p>Phasellus vehicula tempus orci vel consequat. Nullam lorem sem, viverra a rutrum sed, gravida mattis magna. Suspendisse vitae commodo.</p>
+							<p>Use our Easy to Use Powerful Tools to Take your Idea or Business Online Today! Whether You Want to Create a Blog, Use a CMS or Sell Online</p>
 						</div>
 					</div>
 				</div>
@@ -126,8 +111,8 @@
 					<div class="what-card">
 						<img th:src="@{/img/what/3.jpg}" alt="">
 						<div class="wc-text">
-							<h5>The Sollution</h5>
-							<p>Phasellus vehicula tempus orci vel consequat. Nullam lorem sem, viverra a rutrum sed, gravida mattis magna. Suspendisse vitae commodo.</p>
+							<h5>Add ons</h5>
+							<p>We've done the testing, and if you need to build an SMB-focused website, these are the best small business web hosting services for helping  </p>
 						</div>
 					</div>
 				</div>
@@ -149,20 +134,11 @@
 				<div class="col-lg-10 offset-lg-1">
 					<div class="testimonials-slider owl-carousel">
 						<div class="testimonial-item">
-							<p>Phasellus vehicula tempus orci vel consequat. Nullam lorem sem, viverra a rutrum sed, gravida mattis magna. Suspendisse vitae commodo quam. Quisque a enim et ante vulputate finibus nec laoreet ipsum. Etiam lobortis erat vel ullamcorper tristique. Morbi pellentesque orci augue, quis finibus justo accumsan nec. Donec imperdiet sodales lectus sed consectetur. Mauris dignissim.Morbi pellentesque orci augue, quis finibus justo accumsan nec. Donec imperdiet sodales lectus sed consectetur. Mauris dignissim</p>
+							<p>I'm more than satisfied with Secure Hosting. I've been able to secure my website just by giving my url</p>
 							<div class="ti-author-pic set-bg" data-setbg="img/testimonials/1.jpg"></div>
 							<h5>Maria Smith, Client</h5>
 						</div>
-						<div class="testimonial-item">
-							<p>Phasellus vehicula tempus orci vel consequat. Nullam lorem sem, viverra a rutrum sed, gravida mattis magna. Suspendisse vitae commodo quam. Quisque a enim et ante vulputate finibus nec laoreet ipsum. Etiam lobortis erat vel ullamcorper tristique. Morbi pellentesque orci augue, quis finibus justo accumsan nec. Donec imperdiet sodales lectus sed consectetur. Mauris dignissim.Morbi pellentesque orci augue, quis finibus justo accumsan nec. Donec imperdiet sodales lectus sed consectetur. Mauris dignissim</p>
-							<div class="ti-author-pic set-bg" data-setbg="img/testimonials/1.jpg"></div>
-							<h5>Maria Smith, Client</h5>
-						</div>
-						<div class="testimonial-item">
-							<p>Phasellus vehicula tempus orci vel consequat. Nullam lorem sem, viverra a rutrum sed, gravida mattis magna. Suspendisse vitae commodo quam. Quisque a enim et ante vulputate finibus nec laoreet ipsum. Etiam lobortis erat vel ullamcorper tristique. Morbi pellentesque orci augue, quis finibus justo accumsan nec. Donec imperdiet sodales lectus sed consectetur. Mauris dignissim.Morbi pellentesque orci augue, quis finibus justo accumsan nec. Donec imperdiet sodales lectus sed consectetur. Mauris dignissim</p>
-							<div class="ti-author-pic set-bg" data-setbg="img/testimonials/1.jpg"></div>
-							<h5>Maria Smith, Client</h5>
-						</div>
+
 					</div>
 				</div>
 			</div>
@@ -170,99 +146,13 @@
 	</section>
 	<!-- Testimonials section end -->
 
-	<!-- Footer top section -->
-	<section class="footer-top-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-md-12">
-					<div class="footer-widget about-widget">
-						<img th:src="@{/img/logo.png}" alt="">
-						<p>Sed ultrices interdum libero, laoreet facilisis dui fringilla ut. Nullam nisi sem, tristique ut sapien nec, tempus auctor purus. Maecenas eu lectus non dolor euismod dignissim vitae vel tortor. </p>
-						<div class="social-links">
-							<a href="#"><i class="fa fa-pinterest"></i></a>
-							<a href="#"><i class="fa fa-facebook"></i></a>
-							<a href="#"><i class="fa fa-twitter"></i></a>
-							<a href="#"><i class="fa fa-dribbble"></i></a>
-							<a href="#"><i class="fa fa-behance"></i></a>
-							<a href="#"><i class="fa fa-linkedin"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-4">
-					<div class="footer-widget">
-						<h5 class="fw-title">Our Products</h5>
-						<ul>
-							<li><a href="#">Web Hosting</a></li>
-							<li><a href="#">Reseller Hosting</a></li>
-							<li><a href="#">VPS Hosting</a></li>
-							<li><a href="#">Dedicated Servers</a></li>
-							<li><a href="#">Windows Hosting</a></li>
-							<li><a href="#">Cloud Hosting</a></li>
-							<li><a href="#">Linux Servers</a></li>
-							<li><a href="#">WordPress Hosting</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-4">
-					<div class="footer-widget">
-						<h5 class="fw-title">Our Solutions</h5>
-						<ul>
-							<li><a href="">Reseller Hosting</a></li>
-							<li><a href="">WordPress Hosting</a></li>
-							<li><a href="">VPS Hosting</a></li>
-							<li><a href="">Dedicated Servers</a></li>
-							<li><a href="">Windows Hosting</a></li>
-							<li><a href="">Cloud Hosting</a></li>
-							<li><a href="">Linux Servers</a></li>
-							<li><a href="">Web Hosting</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-4">
-					<div class="footer-widget">
-						<h5 class="fw-title">Our Products</h5>
-						<ul>
-							<li><a href="#">Dedicated Servers</a></li>
-							<li><a href="#">Windows Hosting</a></li>
-							<li><a href="#">Cloud Hosting</a></li>
-						</ul>
-					</div>
-					<div class="footer-widget">
-						<h5 class="fw-title">Company</h5>
-						<ul>
-							<li><a href="#">Dedicated Servers</a></li>
-							<li><a href="#">Windows Hosting</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Footer top section end -->
+
 
 
 
 
 	<!-- Footer section -->
-	<footer class="footer-section">
-		<div class="container">
-			<div class="footer-nav">
-				<ul>
-					<li><a href="">Home</a></li>
-					<li><a href="">About us</a></li>
-					<li><a href="">Services</a></li>
-					<li><a href="">News</a></li>
-					<li><a href="">Contact</a></li>
-				</ul>
-			</div>
-			<div class="copyright">
-				<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a th:href="@{/}" target="_blank">SecureHosting</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-				</p>
-			</div>
-		</div>
-	</footer>
+	<div th:replace="fragments/footer.html::footer"></div>
 	<!-- Footer section end -->
 
 

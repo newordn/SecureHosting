@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zxx" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>SecureHosting</title>
+	<title>Secure Hosting. The best solution for your hosting and security</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="Cloud 83 - hosting template ">
 	<meta name="keywords" content="cloud, hosting, creative, html">
@@ -33,32 +33,10 @@
 		<div class="loader"></div>
 	</div>
 
-	<!-- Header section -->
-	<header class="header-section">
-		<div class="container">
-			<a th:href="@{/}" class="site-logo">
-				<img th:src="@{/img/logo.png}" alt="logo">
-			</a>
-			<!-- Switch button -->
-			<div class="nav-switch">
-				<div class="ns-bar"></div>
-			</div>
-			<div class="header-right">
-				<ul class="main-menu">
-					<li><a th:href="@{/}">Home</a></li>
-					<li><a th:href="@{/about}">About us</a></li>
-					<li><a th:href="@{/services}">Services</a></li>
-					<li><a th:href="@{/contact}">Contact</a></li>
-				</ul>
-				<div class="header-btns">
-					<a href="#" class="site-btn sb-c1">Support <span>24/7</span></a>
-					<a href="#" class="site-btn sb-c2">Login</a>
-					<a href="#" class="site-btn sb-c3">Register</a>
-				</div>
-			</div>
-		</div>
-	</header>
-	<!-- Header section end -->
+
+	<!-- header -->
+	<div th:replace="fragments/navBar.html::navBar"></div>
+	<!-- header -->
 
 
 
@@ -72,22 +50,18 @@
 
 
 	<!-- Services section -->
-	<section class="Services-section spad">
+	<section class="Services-section spad set-bg" data-setbg="img/service-bg.jpg">
 		<div class="container">
-			<div class="section-title">
-				<p>The only ones</p>
-				<h2>Our Best Services</h2>
-			</div>
 			<div class="row services-circle">
 				<div class="col-lg-5 col-md-6">
-					<ul class="service-list service-list-left">
+					<ul class="service-list service-list-left text-white">
 						<li>
 							<div class="sl-icon">
 								<img th:src="@{/img/service-icons/1.png}" alt="">
 							</div>
 							<div class="sl-content">
 								<h4>Free Domains</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris.</p>
+								<p>Get a Free Domain Today & Hosting Package</p>
 							</div>
 						</li>
 						<li>
@@ -96,7 +70,7 @@
 							</div>
 							<div class="sl-content">
 								<h4>Shared Hosting</h4>
-								<p>Consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum.</p>
+								<p>one of the most popular hosting options for those who are building out their first websites</p>
 							</div>
 						</li>
 						<li>
@@ -105,20 +79,20 @@
 							</div>
 							<div class="sl-content">
 								<h4>Reseller Hosting</h4>
-								<p>Consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum.</p>
+								<p>Super fast performance at low cost</p>
 							</div>
 						</li>
 					</ul>
 				</div>
-				<div class="col-lg-5  col-md-6 offset-lg-2">
-					<ul class="service-list service-list-right">
+				<div class="col-lg-5 offset-lg-2 col-md-6">
+					<ul class="service-list service-list-right text-white">
 						<li>
 							<div class="sl-icon">
 								<img th:src="@{/img/service-icons/4.png}" alt="">
 							</div>
 							<div class="sl-content">
 								<h4>Vps Hosting</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris.</p>
+								<p>A halfway point between shared hosting and a dedicated server</p>
 							</div>
 						</li>
 						<li>
@@ -127,7 +101,7 @@
 							</div>
 							<div class="sl-content">
 								<h4>Dedicated Hosting</h4>
-								<p>Consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum.</p>
+								<p>Our clients lease an entire server not shared with someone </p>
 							</div>
 						</li>
 						<li>
@@ -136,7 +110,7 @@
 							</div>
 							<div class="sl-content">
 								<h4>Cloud Hosting</h4>
-								<p>Consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum.</p>
+								<p>provide hosting on virtual servers which pull their computing resource from extensive underlying networks of physical web servers</p>
 							</div>
 						</li>
 					</ul>
@@ -154,8 +128,7 @@
 	<section class="pricing-section spad">
 		<div class="container">
 			<div class="section-title text-white">
-				<p>The only ones</p>
-				<h2>Testimonials</h2>
+				<p>Our prices</p>
 			</div>
 			<div class="row">
 				<div class="col-md-4">
@@ -205,21 +178,21 @@
 				<div class="col-md-4">
 					<div class="pricing-card">
 						<div class="pc-header">
-							<h4>Dedicated Hosting</h4>
-							<h5>$9.99<span>/month</span></h5>
+							<h4>Ssl  for https</h4>
+							<h5>$9.2<span>/month</span></h5>
 						</div>
 						<div class="pc-details">
 							<div class="pc-icon">
 								<img th:src="@{/img/pricing-icons/3.png}" alt="#">
 							</div>
 							<ul>
-								<li>10GB File storage</li>
-								<li>Unlimited websites</li>
+								<li>Ssl Certificates</li>
 								<li>24/7 Support</li>
 								<li>Discount code engine</li>
 								<li>All OS Supported</li>
 								<li>Snyc Multiple Devices</li>
 							</ul>
+
 							<a href="" class="site-btn">Get plan</a>
 						</div>
 					</div>
@@ -230,146 +203,10 @@
 	<!-- Pricing end -->
 
 
-	<!-- Add  section -->
-	<div class="add-section spad">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 add-pic">
-					<a href="#"><img th:src="@{/img/add.jpg}" alt=""></a>
-				</div>
-				<div class="col-lg-6">
-					<div id="accordion" class="accordion-area">
-						<div class="panel">
-							<div class="panel-header" id="headingOne">
-								<button class="panel-link active" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</button>
-							</div>
-							<div id="collapse1" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-								<div class="panel-body">
-									<p>Phasellus vehicula tempus orci vel consequat. Nullam lorem sem, viverra a rutrum sed, gravida mattis magna. Suspendisse vitae commodo quam. Quisque a enim et ante vulputate finibu.</p>
-								</div>
-							</div>
-						</div>
-						<div class="panel">
-							<div class="panel-header" id="headingTwo">
-								<button class="panel-link" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">Ipsum dolor sit amet, consectetur adipiscing elit.</button>
-							</div>
-							<div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-								<div class="panel-body">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis semper venenatis turpis eget suscipit. Orci varius natoque penatibus et magnis dis parturient montes.</p>
-								</div>
-							</div>
-						</div>
-						<div class="panel">
-							<div class="panel-header active" id="headingThree">
-								<button class="panel-link" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">Etiam at nibh non dolor porttitor fermentum eu vel mi.</button>
-							</div>
-							<div id="collapse3" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-								<div class="panel-body">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis semper venenatis turpis eget suscipit. Orci varius natoque penatibus et magnis dis parturient montes.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Add section end -->
-
-
-	<!-- Footer top section -->
-	<section class="footer-top-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-md-12">
-					<div class="footer-widget about-widget">
-						<img th:src="@{/img/logo.png}" alt="">
-						<p>Sed ultrices interdum libero, laoreet facilisis dui fringilla ut. Nullam nisi sem, tristique ut sapien nec, tempus auctor purus. Maecenas eu lectus non dolor euismod dignissim vitae vel tortor. </p>
-						<div class="social-links">
-							<a href="#"><i class="fa fa-pinterest"></i></a>
-							<a href="#"><i class="fa fa-facebook"></i></a>
-							<a href="#"><i class="fa fa-twitter"></i></a>
-							<a href="#"><i class="fa fa-dribbble"></i></a>
-							<a href="#"><i class="fa fa-behance"></i></a>
-							<a href="#"><i class="fa fa-linkedin"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-4">
-					<div class="footer-widget">
-						<h5 class="fw-title">Our Products</h5>
-						<ul>
-							<li><a href="#">Web Hosting</a></li>
-							<li><a href="#">Reseller Hosting</a></li>
-							<li><a href="#">VPS Hosting</a></li>
-							<li><a href="#">Dedicated Servers</a></li>
-							<li><a href="#">Windows Hosting</a></li>
-							<li><a href="#">Cloud Hosting</a></li>
-							<li><a href="#">Linux Servers</a></li>
-							<li><a href="#">WordPress Hosting</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-4">
-					<div class="footer-widget">
-						<h5 class="fw-title">Our Solutions</h5>
-						<ul>
-							<li><a href="">Reseller Hosting</a></li>
-							<li><a href="">WordPress Hosting</a></li>
-							<li><a href="">VPS Hosting</a></li>
-							<li><a href="">Dedicated Servers</a></li>
-							<li><a href="">Windows Hosting</a></li>
-							<li><a href="">Cloud Hosting</a></li>
-							<li><a href="">Linux Servers</a></li>
-							<li><a href="">Web Hosting</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-4">
-					<div class="footer-widget">
-						<h5 class="fw-title">Our Products</h5>
-						<ul>
-							<li><a href="#">Dedicated Servers</a></li>
-							<li><a href="#">Windows Hosting</a></li>
-							<li><a href="#">Cloud Hosting</a></li>
-						</ul>
-					</div>
-					<div class="footer-widget">
-						<h5 class="fw-title">Company</h5>
-						<ul>
-							<li><a href="#">Dedicated Servers</a></li>
-							<li><a href="#">Windows Hosting</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Footer top section end -->
-
-
 
 
 	<!-- Footer section -->
-	<footer class="footer-section">
-		<div class="container">
-			<div class="footer-nav">
-				<ul>
-					<li><a href="">Home</a></li>
-					<li><a href="">About us</a></li>
-					<li><a href="">Services</a></li>
-					<li><a href="">News</a></li>
-					<li><a href="">Contact</a></li>
-				</ul>
-			</div>
-			<div class="copyright">
-				<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a th:href="@{/}" target="_blank">SecureHosting</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-				</p>
-			</div>
-		</div>
-	</footer>
+	<div th:replace="fragments/footer.html::footer"></div>
 	<!-- Footer section end -->
 
 

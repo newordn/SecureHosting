@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zxx" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>SecureHosting</title>
+	<title>Secure Hosting. The best solution for your hosting and security</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="Cloud 83 - hosting template ">
 	<meta name="keywords" content="cloud, hosting, creative, html">
@@ -33,33 +33,9 @@
 		<div class="loader"></div>
 	</div>
 
-	<!-- Header section -->
-	<header class="header-section">
-		<div class="container">
-			<a th:href="@{/}" class="site-logo">
-				<img th:src="@{/img/logo.png}" alt="logo">
-			</a>
-			<!-- Switch button -->
-			<div class="nav-switch">
-				<div class="ns-bar"></div>
-			</div>
-			<div class="header-right">
-				<ul class="main-menu">
-					<li><a th:href="@{/}">Home</a></li>
-					<li><a th:href="@{/about}">About us</a></li>
-					<li><a th:href="@{/services}">Services</a></li>
-					<li><a th:href="@{/contact}">Contact</a></li>
-				</ul>
-				<div class="header-btns">
-					<a href="#" class="site-btn sb-c1">Support <span>24/7</span></a>
-					<a href="#" data-toggle="modal" data-target="#modalLoginForm" class="site-btn sb-c2">Login</a>
-					<a href="#" class="site-btn sb-c3">Register</a>
-				</div>
-			</div>
-		</div>
-	</header>
-	<!-- Header section end -->
-
+	<!-- header -->
+	<div th:replace="fragments/navBar.html::navBar"></div>
+	<!-- header -->
 
 	<!-- Signin section start -->
 	<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -100,21 +76,11 @@
 			<div class="hs-item set-bg" data-setbg="img/bg.jpg">
 				<div class="container">
 					<h2>The Best Hosting</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque,</p>
-					<p>at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
+					<p>We make hosting easier and secure</p>
 					<div class="clearfix"></div>
-					<a href="" class="site-btn sb-c1">Read More</a>
 				</div>
 			</div>
-			<div class="hs-item set-bg" data-setbg="img/bg.jpg">
-				<div class="container">
-					<h2>The Best Hosting</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque,</p>
-					<p>at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
-					<div class="clearfix"></div>
-					<a href="" class="site-btn sb-c1">Read More</a>
-				</div>
-			</div>
+
 		</div>
 	</section>
 	<!-- Hero section end -->
@@ -127,17 +93,17 @@
 				<div class="col-md-4 feature">
 					<img th:src="@{/img/feature-icons/1.png}" alt="#">
 					<h4>Worldwide Support</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. </p>
+					<p>We can secure any kind of domains.We offer an unlimited number of SSL certificates (256 bits) of sites / domains at your convenience that increase your visibility with search engines according to Google's new ranking algorithm </p>
 				</div>
 				<div class="col-md-4 feature">
 					<img th:src="@{/img/feature-icons/2.png}" alt="#">
 					<h4>Safe & Secure</h4>
-					<p>Ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. </p>
+					<p>Our protection is operated by CISCO and application firewalls, we offer better security and optimal protection against the most common attacks. </p>
 				</div>
 				<div class="col-md-4 feature">
 					<img th:src="@{/img/feature-icons/3.png}" alt="#">
 					<h4>Cloud Hosting</h4>
-					<p>Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
+					<p>Our data centers (SAS 70 Type II certified) with state-of-the-art N + 2 redundancy are equipped with multiple backbone Internet lines, backup diesel generators, backup tape libraries, 24/7 monitoring 7 ensuring speed, security and redundancy</p>
 				</div>
 			</div>
 		</div>
@@ -162,7 +128,7 @@
 							</div>
 							<div class="sl-content">
 								<h4>Free Domains</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris.</p>
+								<p>Get a Free Domain Today & Hosting Package</p>
 							</div>
 						</li>
 						<li>
@@ -171,7 +137,7 @@
 							</div>
 							<div class="sl-content">
 								<h4>Shared Hosting</h4>
-								<p>Consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum.</p>
+								<p>one of the most popular hosting options for those who are building out their first websites</p>
 							</div>
 						</li>
 						<li>
@@ -180,7 +146,7 @@
 							</div>
 							<div class="sl-content">
 								<h4>Reseller Hosting</h4>
-								<p>Consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum.</p>
+								<p>Super fast performance at low cost</p>
 							</div>
 						</li>
 					</ul>
@@ -193,7 +159,7 @@
 							</div>
 							<div class="sl-content">
 								<h4>Vps Hosting</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris.</p>
+								<p>A halfway point between shared hosting and a dedicated server</p>
 							</div>
 						</li>
 						<li>
@@ -202,7 +168,7 @@
 							</div>
 							<div class="sl-content">
 								<h4>Dedicated Hosting</h4>
-								<p>Consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum.</p>
+								<p>Our clients lease an entire server not shared with someone </p>
 							</div>
 						</li>
 						<li>
@@ -211,7 +177,7 @@
 							</div>
 							<div class="sl-content">
 								<h4>Cloud Hosting</h4>
-								<p>Consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum.</p>
+								<p>provide hosting on virtual servers which pull their computing resource from extensive underlying networks of physical web servers</p>
 							</div>
 						</li>
 					</ul>
@@ -238,11 +204,16 @@
 					<img th:src="@{/img/about.png}" alt="">
 				</div>
 				<div class="col-lg-7 about-text">
-					<p>Phasellus vehicula tempus orci vel consequat. Nullam lorem sem, viverra a rutrum sed, gravida mattis magna. Suspendisse vitae commodo quam. Quisque a enim et ante vulputate finibus nec laoreet ipsum. Etiam lobortis erat vel ullamcorper tristique. Morbi pellentesque orci augue, quis finibus justo accumsan nec. Donec imperdiet sodales lectus sed consectetur. Mauris dignissim</p>
+					<p>
+						We are the only company to offer a lifetime discount!
+						The renewal fee of your package will be the same as the original
+						price! As long as you stay with us, take advantage of our
+						great offers at low prices. No hidden fees, no rate changes
+					</p>
 					<ul class="about-list">
-						<li>Nullam lorem sem, viverra a rutrum</li>
-						<li>Etiam lobortis erat vel ullamcorper</li>
-						<li>Sed ultrices interdum libero, laoreet </li>
+						<li>100% guaranteed availability</li>
+						<li>Best rates in the area</li>
+						<li>Lifetime reduction guarantee </li>
 					</ul>
 				</div>
 			</div>
@@ -303,8 +274,6 @@
 		<div class="container">
 			<div class="banner-card">
 				<h2>We are here to help you get started</h2>
-				<h6>Sed ultrices interdum libero, laoreet facilisis dui fringilla ut. </h6>
-				<a href="" class="site-btn sb-c3">Start</a>
 			</div>
 		</div>
 	</section>
@@ -317,7 +286,6 @@
 				<div class="col-lg-3 col-md-12">
 					<div class="footer-widget about-widget">
 						<img th:src="@{/img/logo.png}" alt="">
-						<p>Sed ultrices interdum libero, laoreet facilisis dui fringilla ut. Nullam nisi sem, tristique ut sapien nec, tempus auctor purus. Maecenas eu lectus non dolor euismod dignissim vitae vel tortor. </p>
 						<div class="social-links">
 							<a href="#"><i class="fa fa-pinterest"></i></a>
 							<a href="#"><i class="fa fa-facebook"></i></a>
@@ -333,6 +301,7 @@
 						<h5 class="fw-title">Our Products</h5>
 						<ul>
 							<li><a href="#">Web Hosting</a></li>
+							<li><a href="#">Ssl Certificates for Https</a></li>
 							<li><a href="#">Reseller Hosting</a></li>
 							<li><a href="#">VPS Hosting</a></li>
 							<li><a href="#">Dedicated Servers</a></li>
@@ -347,14 +316,14 @@
 					<div class="footer-widget">
 						<h5 class="fw-title">Our Solutions</h5>
 						<ul>
-							<li><a href="">Reseller Hosting</a></li>
-							<li><a href="">WordPress Hosting</a></li>
-							<li><a href="">VPS Hosting</a></li>
-							<li><a href="">Dedicated Servers</a></li>
-							<li><a href="">Windows Hosting</a></li>
-							<li><a href="">Cloud Hosting</a></li>
-							<li><a href="">Linux Servers</a></li>
-							<li><a href="">Web Hosting</a></li>
+							<li><a href="#">Reseller Hosting</a></li>
+							<li><a href="#">WordPress Hosting</a></li>
+							<li><a href="#">VPS Hosting</a></li>
+							<li><a href="#">Dedicated Servers</a></li>
+							<li><a href="#">Windows Hosting</a></li>
+							<li><a href="#">Cloud Hosting</a></li>
+							<li><a href="#">Linux Servers</a></li>
+							<li><a href="#">Web Hosting</a></li>
 						</ul>
 					</div>
 				</div>
@@ -384,25 +353,7 @@
 
 
 	<!-- Footer section -->
-	<footer class="footer-section">
-		<div class="container">
-			<div class="footer-nav">
-				<ul>
-					<li><a href="">Home</a></li>
-					<li><a href="">About us</a></li>
-					<li><a href="">Services</a></li>
-					<li><a href="">News</a></li>
-					<li><a href="">Contact</a></li>
-				</ul>
-			</div>
-			<div class="copyright">
-				<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a th:href="@{/}" target="_blank">SecureHosting</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-				</p>
-			</div>
-		</div>
-	</footer>
+	<div th:replace="fragments/footer.html::footer"></div>
 	<!-- Footer section end -->
 
 
