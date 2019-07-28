@@ -1,0 +1,25 @@
+
+<!-- Header section -->
+<header th:fragment="navBar" class="header-section" xmlns:th="http://www.springframework.org/schema/security">
+    <div class="container">
+
+        <!-- Switch button -->
+        <div class="nav-switch">
+            <div class="ns-bar"></div>
+        </div>
+        <div class="header-right">
+            <ul class="main-menu">
+                <li><a style="font-weight:bold" th:href="@{/}">Secure Hosting</a></li>
+                <li><a th:href="@{/}">Home</a></li>
+                <li><a th:href="@{/about}">About us</a></li>
+                <li><a th:href="@{/services}">Services</a></li>
+                <li><a th:href="@{/contact}">Contact</a></li>
+            </ul>
+            <div class="header-btns">
+                <a href="#" data-toggle="modal" data-target="#modalLoginForm" class="site-btn sb-c2">Login</a>
+                <a href="#" class="site-btn sb-c3">Register</a>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Header section end -->
