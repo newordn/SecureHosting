@@ -36,6 +36,8 @@
 
 	<!-- header -->
 	<div th:replace="fragments/navBar.html::navBar"></div>
+    <div th:replace="fragments/connexion.html::connexion"></div>
+	<div th:replace="fragments/inscription.html::inscription"></div>
 	<!-- header -->
 
 
@@ -204,7 +206,75 @@
 	<!-- Pricing end -->
 
 
-
+    <!-- Footer top section -->
+    <section class="footer-top-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-12">
+                    <div class="footer-widget about-widget">
+                        <img th:src="@{/img/logo.png}" alt="">
+                        <div class="social-links">
+                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                            <a href="#"><i class="fa fa-behance"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-4">
+                    <div class="footer-widget">
+                        <h5 class="fw-title">Our Products</h5>
+                        <ul>
+                            <li><a href="#">Web Hosting</a></li>
+                            <li><a href="#">Ssl Certificates for Https</a></li>
+                            <li><a href="#">Reseller Hosting</a></li>
+                            <li><a href="#">VPS Hosting</a></li>
+                            <li><a href="#">Dedicated Servers</a></li>
+                            <li><a href="#">Windows Hosting</a></li>
+                            <li><a href="#">Cloud Hosting</a></li>
+                            <li><a href="#">Linux Servers</a></li>
+                            <li><a href="#">WordPress Hosting</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-4">
+                    <div class="footer-widget">
+                        <h5 class="fw-title">Our Solutions</h5>
+                        <ul>
+                            <li><a href="#">Reseller Hosting</a></li>
+                            <li><a href="#">WordPress Hosting</a></li>
+                            <li><a href="#">VPS Hosting</a></li>
+                            <li><a href="#">Dedicated Servers</a></li>
+                            <li><a href="#">Windows Hosting</a></li>
+                            <li><a href="#">Cloud Hosting</a></li>
+                            <li><a href="#">Linux Servers</a></li>
+                            <li><a href="#">Web Hosting</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-4">
+                    <div class="footer-widget">
+                        <h5 class="fw-title">Our Products</h5>
+                        <ul>
+                            <li><a href="#">Dedicated Servers</a></li>
+                            <li><a href="#">Windows Hosting</a></li>
+                            <li><a href="#">Cloud Hosting</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-widget">
+                        <h5 class="fw-title">Company</h5>
+                        <ul>
+                            <li><a href="#">Dedicated Servers</a></li>
+                            <li><a href="#">Windows Hosting</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer top section end -->
 
 	<!-- Footer section -->
 	<div th:replace="fragments/footer.html::footer"></div>

@@ -13,18 +13,15 @@ import java.util.Set;
 public  @Data class User {
     @GeneratedValue
     @Id
+    @Column(name = "user_id")
     private Long id;
     @Column(name = "name")
     @NotEmpty(message = "*Please provide your name")
     private String name;
-    @Column(name = "country")
-    @NotEmpty(message = "*Please provide your country")
-    private String country;
     @Column(name = "password")
     @Length(min = 5, message = "*Your password must have at least 5 characters")
     @NotEmpty(message = "*Please provide your password")
     private String password;
-    private String phone;
     @Column(name = "email")
     @Email(message = "*Please provide a valid Email")
     @NotEmpty(message = "*Please provide an email")

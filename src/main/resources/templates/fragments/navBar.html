@@ -16,8 +16,9 @@
                 <li><a th:href="@{/contact}">Contact</a></li>
             </ul>
             <div class="header-btns">
-                <a href="#" data-toggle="modal" data-target="#modalLoginForm" class="site-btn sb-c2">Login</a>
-                <a href="#" class="site-btn sb-c3">Register</a>
+                <a th:if="${session.userId}== null" href="#" data-toggle="modal" data-target="#modalLoginForm" class="site-btn sb-c2">Login</a>
+                <a th:if="${session.userId}!= null" th:href="@{/logout}"  class="site-btn sb-c2">Logout</a>
+                <a href="#" data-toggle="modal" data-target="#modalLoginForm1" class="site-btn sb-c3">Register</a>
             </div>
         </div>
     </div>
