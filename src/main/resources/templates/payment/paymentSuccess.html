@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/animate.css"/>
 
-
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -59,9 +58,18 @@
                 <th scope="col">Service</th>
                 <th scope="col">Subscription Date</th>
                 <th scope="col">Price by months</th>
-                <th scope="col">Final Date</th>
+                <th scope="col">Validity Period</th>
             </tr>
             </thead>
+            <tbody>
+            <tr th:each="article : ${articles}">
+                <th scope="col" th:text="${article.id}">Transaction Id</th>
+                <th scope="col" th:text="${article.name}">Service</th>
+                <th scope="col" th:text="${article.buyDate}">Subscription Date</th>
+                <th scope="col" th:text="${article.price}">Price by months</th>
+                <th scope="col">3 Years</th>
+            </tr>
+            </tbody>
         </table>
     </div>
 

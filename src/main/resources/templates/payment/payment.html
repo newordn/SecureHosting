@@ -26,9 +26,9 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
     <![endif]-->
-
+live = AZKcPJR39bl5LbjS6sSCxPnKdAFLI07QJ2lvdmt4acnmIkkZNtCaEUTma27jbq1tmVFadJkfHW6bdUKM
     <script
-            src="https://www.paypal.com/sdk/js?client-id=AX1bgCA9UyX9fwXC1EuDBva_xyHGr5YIUO5T_T0xLT_WcUEewEkW8Il5sZ0yzcJ7FPGVpR7YKi9-Q5mi ">
+            src="https://www.paypal.com/sdk/js?client-id=AZ73JHlL72n_zSmZ4QHjjLtQFoAb7MW2wff2lYENcOwzl-YhxCP09c3suYJk6oCJoejdmsBIeXrE6nhS">
     </script>
 
 </head>
@@ -70,9 +70,12 @@
 
 </div>
 <!-- paypal buton -->
-<div class="row justify-content-center align-items-center" id="payPal" style="height:90vh">
+<div   th:if="${session.userId}!= null" class="row justify-content-center align-items-center" id="payPal" style="height:90vh">
     <div id="paypal-button-container" class="row justify-content-center">
     </div>
+</div>
+<div  th:if="${session.userId}== null" class="row justify-content-center align-items-center"  style="height:90vh">
+    <a th:href="@{/login}" class="site-btn sb-c2">Login To make a payment</a>
 </div>
 <!-- paypal buton -->
 
@@ -153,12 +156,20 @@
 
 <!--====== Javascripts & Jquery ======-->
 <script src="js/jquery-3.2.1.min.js"></script>
+
 <script src="js/bootstrap.min.js"></script>
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/jquery.magnific-popup.min.js"></script>
 <script src="js/circle-progress.min.js"></script>
 <script src="js/main.js"></script>
-<script th:src="@{js/paypal.js}"></script>
+<form th:action="@{/payment_save}" method="post" >
+    <input id="orderId" name="orderId">
+    <input id="userName" name="userName">
+    <input id="amount2" name="price">
+    <input id="years" name="years" value="3">
+    <button type="submit" id="paymentSuccessForm" >.</button>
+</form>
 
+<script th:src="@{js/paypal.js}"></script>
 </body>
 </html>
