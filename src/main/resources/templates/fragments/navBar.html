@@ -18,6 +18,7 @@
             <div class="header-btns">
                 <a th:if="${session.userId}== null" th:href="@{/login}" class="site-btn sb-c2">Login</a>
                 <a th:if="${session.userId}!= null" th:href="@{/logout}"  class="site-btn sb-c2">Logout</a>
+                <a th:if="${session.userId}!= null" th:href="@{/payment_success}"  class="site-btn sb-c2">My transactions</a>
                 <a th:if="${session.userId}==null" th:href="@{/registration}"  class="site-btn sb-c3">Register</a>
             </div>
         </div>

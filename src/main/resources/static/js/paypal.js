@@ -1,3 +1,5 @@
+
+
 paypal.Buttons({
     createOrder: function(data, actions) {
         return actions.order.create({
@@ -5,25 +7,19 @@ paypal.Buttons({
                 amount: {
                     value: $("#amount").val()
                 }
-            }]
+            }],
+            description: 'Secure Hosting Payment, Ssl Certificates'
         });
     },
     onApprove: function(data, actions) {
         return actions.order.capture().then(function(details) {
-            alert('Transaction completed  ' + details.payer.name.given_name);
+            alert('Transaction completed with success');
+            $("#orderId").val(data.orderId)
+            $("#amount2").val($("#amount").val())
 
-            // Call your server to save the transaction
-            return fetch('/paypal-transaction-complete', {
-                method: 'post',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify({
-                    orderID: data.orderID
-                })
-            });
+// Call your server to save the transaction
+            document.getElementById("paymentSuccessForm").click()
 
-            $("#transaction_success").click();
         });
     }
 }).render('#paypal-button-container');

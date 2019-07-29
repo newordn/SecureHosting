@@ -33,4 +33,8 @@ public  @Data class User {
     private Set<Role> roles;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Article> articles;
+    public User()
+    {
+
+    }
 }
