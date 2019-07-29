@@ -46,16 +46,16 @@ public class UserController {
         URL url3=new URL("http://localhost:8080/services");
 
         if (bindingResult.hasErrors()){
-            if (url.equals((URL) session.getAttribute("last_url"))){
+            if (url.equals(""+ session.getAttribute("last_url"))){
                 model.addAttribute("error","There is already a user registered with the email provided");
                 return "home/home";
-            }else if (url1.equals((URL) session.getAttribute("last_url"))){
+            }else if (url1.equals(""+ session.getAttribute("last_url"))){
                 model.addAttribute("error","There is already a user registered with the email provided");
                 return "home/about";
-            }else if (url2.equals((URL) session.getAttribute("last_url"))){
+            }else if (url2.equals(""+ session.getAttribute("last_url"))){
                 model.addAttribute("error","There is already a user registered with the email provided");
                 return "home/contact";
-            }else if (url3.equals((URL) session.getAttribute("last_url"))){
+            }else if (url3.equals(""+ session.getAttribute("last_url"))){
                 model.addAttribute("error","There is already a user registered with the email provided");
                 return "home/service";
             }else {
@@ -72,6 +72,7 @@ public class UserController {
     @GetMapping("/admin/home")
     public String homeSuccess(HttpSession session){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        System.out.println(auth.getName());
         User user=userService.findUserByEmail(auth.getName());
         session.setAttribute("userId",user.getId());
         return "redirect:"+session.getAttribute("last_url");

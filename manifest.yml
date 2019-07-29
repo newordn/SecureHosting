@@ -1,0 +1,9 @@
+applications:
+- name: secure-hosting
+  buildpack: java-buildpack-offline-cflinuxfs3-v4.20.zip
+path: target/secure-hosting.jar
+domain: secure-hosting.org
+memory: 5M
+instances: 1
+services:
+- mysql
