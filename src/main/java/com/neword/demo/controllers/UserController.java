@@ -23,6 +23,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @GetMapping("/login")
+    public String login(HttpServletRequest request, HttpSession session){
+        session.setAttribute("last_url", request.getHeader("referer"));
+        return "home/login";
+    }
+
     @GetMapping("/logout")
     public String logout(HttpServletRequest request,HttpSession httpSession){
 
@@ -32,40 +38,32 @@ public class UserController {
     }
 
 
+    @GetMapping("/registration")
+    public String registration(Model model){
+        User user=new User();
+        model.addAttribute("user",user);
+        return "home/registration";
+    }
     @PostMapping("/registration")
     public String saveUser(@Valid User user, BindingResult bindingResult, HttpSession session, Model model) throws MalformedURLException {
         User userExists=userService.findUserByEmail(user.getEmail());
+        System.out.println(user.getEmail());
+        System.out.println(user.getName());
+        System.out.println(user.getPassword());
         if (userExists != null) {
             bindingResult
                     .rejectValue("email", "error.user",
                             "There is already a user registered with the email provided");
         }
-        URL url=new URL("http://localhost:8080/");
-        URL url1=new URL("http://localhost:8080/about");
-        URL url2=new URL("http://localhost:8080/contact");
-        URL url3=new URL("http://localhost:8080/services");
 
         if (bindingResult.hasErrors()){
-            if (url.equals(""+ session.getAttribute("last_url"))){
-                model.addAttribute("error","There is already a user registered with the email provided");
-                return "home/home";
-            }else if (url1.equals(""+ session.getAttribute("last_url"))){
-                model.addAttribute("error","There is already a user registered with the email provided");
-                return "home/about";
-            }else if (url2.equals(""+ session.getAttribute("last_url"))){
-                model.addAttribute("error","There is already a user registered with the email provided");
-                return "home/contact";
-            }else if (url3.equals(""+ session.getAttribute("last_url"))){
-                model.addAttribute("error","There is already a user registered with the email provided");
-                return "home/service";
-            }else {
-                System.out.println("rien a faire");
-            }
+            model.addAttribute("errorMessage", "There is already a user registered with the email provided");
+            return "home/registration";
         }else {
             userService.saveUser(user);
-            model.addAttribute("successMessage","You have been registered successfully");
         }
-        return "redirect:"+session.getAttribute("last_url");
+        model.addAttribute("successMessage","You have been registered successfully");
+        return "home/login";
 
     }
 
