@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="zxx" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:opacity="http://www.w3.org/1999/xhtml">
 <head>
     <title>Secure Hosting. The best solution for your hosting and security</title>
     <meta charset="UTF-8">
@@ -54,13 +54,14 @@
 </section>
 <!-- Page Top section end -->
 
+<input type="text" id="amount" th:value="${amount}" style="opacity:0;" disabled >
+<div class="row justify-content-center align-items-center">
+    <h3><em th:text="${amount}"></em> $<br/></h3>
+</div>
 <!-- paypal buton -->
-<div class="row justify-content-center align-items-center" id="payPal" style="height:100vh">
-
+<div class="row justify-content-center align-items-center" id="payPal" style="height:90vh">
     <div id="paypal-button-container" class="row justify-content-center">
-
     </div>
-
 </div>
 <!-- paypal buton -->
 

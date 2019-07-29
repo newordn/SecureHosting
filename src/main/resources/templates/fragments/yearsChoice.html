@@ -1,0 +1,11 @@
+<form method="post" th:fragment="yearsChoice" th:action="@{/payment}" xmlns:th="http://www.w3.org/1999/xhtml">
+    <input type="radio" name="years" id="threeYears" value="3" checked>
+    <label  for="threeYears">3 years</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="years" id="fourthYears" value="4">
+    <label  for="fourthYears">4 years</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="years" id="fithYears" value="5">
+    <label  for="fithYears">5 years</label>
+    <br><br>
+    <button type="submit" class="btn btn-success">Order</button>
+
+</form>
