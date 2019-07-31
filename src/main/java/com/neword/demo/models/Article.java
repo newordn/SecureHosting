@@ -19,15 +19,24 @@ public  @Data class Article {
     private Double price;
     private Date buyDate= new Date();
     private String validityPeriod;
+    private String orderId;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "user_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
+    public Article(String name, Double price, Date buyDate, String validityPeriod, String orderId)
+    {
+        this.name =name;
+        this.price = price;
+        this.buyDate = buyDate;
+        this.validityPeriod = validityPeriod;
+        this.orderId = orderId;
+    }
     public Article()
     {
 
     }
-    public Article(String name, Double price, Date date, String buyDate) {
-    }
+
+
 }

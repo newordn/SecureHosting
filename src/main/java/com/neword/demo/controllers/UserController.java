@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -24,8 +25,15 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/login")
-    public String login(HttpServletRequest request, HttpSession session){
-        session.setAttribute("last_url", request.getHeader("referer"));
+    public String login(){
+
+        return "home/login";
+    }
+    @PostMapping("/signin")
+    public String login1(HttpServletRequest request, HttpSession session){
+
+        session.setAttribute("last_url", request.getParameter("referer"));
+        System.out.println(request.getParameter("referer"));
         return "home/login";
     }
 
@@ -34,7 +42,7 @@ public class UserController {
 
         HttpSession session= request.getSession();
         session.invalidate();
-        return "redirect:"+httpSession.getAttribute("last_url");
+        return "redirect:/";
     }
 
 
@@ -67,12 +75,13 @@ public class UserController {
 
     }
 
-    @GetMapping("/admin/home")
+    @GetMapping("/admin")
     public String homeSuccess(HttpSession session){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         System.out.println(auth.getName());
         User user=userService.findUserByEmail(auth.getName());
         session.setAttribute("userId",user.getId());
+
         return "redirect:"+session.getAttribute("last_url");
 
     }

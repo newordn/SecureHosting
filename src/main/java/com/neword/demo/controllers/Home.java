@@ -19,7 +19,6 @@ class Home {
     @GetMapping(value="/")
     public String getHome(Model model, HttpSession httpSession, HttpServletRequest request)
     {
-        httpSession.setAttribute("last_url",request.getHeader("referer"));
         User user=new User();
         model.addAttribute("user",user);
         return "home/home";

@@ -60,6 +60,7 @@
 <section class="page-top-section set-bg" data-setbg="img/page-top-bg/3.jpg">
     <div class="container">
         <h2>Connexion</h2>
+        <h5 style="color:red" th:if="${param.error}">Password or Login is incorrect</h5>
     </div>
 </section>
 <!-- Page Top section end -->
@@ -79,7 +80,8 @@
             <input type="password" name="password" id="defaultSubscriptionFormEmail" class="form-control mb-4" placeholder="Password...">
 
             <!-- Sign in button -->
-            <button class="btn btn-info btn-block" type="submit">Login</button>
+            <button class="btn btn-info btn-block mb-3" type="submit">Login</button>
+            <a th:if="${session.userId}==null" th:href="@{/registration}"  class="site-btn sb-c3">Register</a>
 
 
         </form>

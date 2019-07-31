@@ -63,11 +63,11 @@
             </thead>
             <tbody>
             <tr th:each="article : ${articles}">
-                <th scope="col" th:text="${article.id}">Transaction Id</th>
+                <th scope="col" th:text="${article.orderId}">Transaction Id</th>
                 <th scope="col" th:text="${article.name}">Service</th>
                 <th scope="col" th:text="${article.buyDate}">Subscription Date</th>
-                <th scope="col" th:text="${article.price}">Price by months</th>
-                <th scope="col">3 Years</th>
+                <th scope="col" th:text="${article.price}">Price</th>
+                <th scope="col"  th:text="${article.validityPeriod}">3 Years</th>
             </tr>
             </tbody>
         </table>

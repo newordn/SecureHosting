@@ -12,11 +12,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 
 @Controller
@@ -28,13 +27,13 @@ public class Payment {
 
     @Autowired
     private UserService userService;
-    @PostMapping(value="/payment")
-    public String getPaymentPage(HttpServletRequest request, Model model)
+    @GetMapping(value="/payment")
+    public String getPaymentPage(@RequestParam String years, Model model)
     {
-        Long years = Long.parseLong(request.getParameter("years"));
+        Long years1 = Long.parseLong(years);
         double amount = 331.2;
-        if(years==4) amount = 441.6;
-        else if(years==5) amount = 552;
+        if(years1==4) amount = 441.6;
+        else if(years1==5) amount = 552;
         model.addAttribute("amount",amount);
         return "payment/payment";
     }
@@ -51,16 +50,40 @@ public class Payment {
     @PostMapping(value="/payment_save")
     public String paymentSave(HttpServletRequest request)
     {
-
+        System.out.println(request.getParameter(("orderId")));
+        System.out.println(request.getParameter(("price")));
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user=userService.findUserByEmail(auth.getName());
         Long time = System.currentTimeMillis();
-        Article article =new Article("Ssl Certificates",Double.parseDouble(request.getParameter("price")),new Date(time),request.getParameter("years"));
+        Double price = Double.parseDouble(request.getParameter("price"));
+        Map<Double,String> priceService = new HashMap<Double,String>();
+                priceService.put(331.2, "Ssl Certificates");
+                priceService.put(441.2, "Ssl Certificates");
+                priceService.put(552.0, "Ssl Certificates");
+                priceService.put(215.64, "Cloud Hosting");
+                priceService.put(287.52, "Cloud Hosting");
+                priceService.put(359.4, "Cloud Hosting");
+        priceService.put(287.64, "VPS Hosting");
+        priceService.put(383.52, "VPS Hosting");
+        priceService.put(479.4, "VPS Hosting");
+                Map<Double,String> priceYears = new HashMap<Double,String>();
+                priceYears.put(331.2,"3");
+                priceYears.put(441.2,"4");
+                priceYears.put(552.0,"5");
+                // Cloud Hosting
+                priceYears.put(215.64, "3");
+
+        priceYears.put(287.52, "4");
+        priceYears.put(359.4, "5");
+        //VPS HOSTING
+        priceYears.put(287.64, "3");
+        priceYears.put(383.52, "4");
+        priceYears.put(479.4, "5");
+        System.out.println(price);
+        System.out.println(priceService.toString());
+        System.out.println(priceYears.toString());
+        Article article =new Article(priceService.get(price),price,new Date(time),priceYears.get(price),time.toString());
         article.setUser(user);
-        List<Article> articles = new ArrayList<Article>();
-        articles.add(article);
-        user.setArticles(articles);
-        userRepository.save(user);
         articleRepository.save(article);
         return "redirect:/payment_success";
     }

@@ -28,7 +28,7 @@
     <![endif]-->
 
     <script
-            src="https://www.paypal.com/sdk/js?client-id=AZKcPJR39bl5LbjS6sSCxPnKdAFLI07QJ2lvdmt4acnmIkkZNtCaEUTma27jbq1tmVFadJkfHW6bdUKM">
+            src="https://www.paypal.com/sdk/js?client-id=AZ73JHlL72n_zSmZ4QHjjLtQFoAb7MW2wff2lYENcOwzl-YhxCP09c3suYJk6oCJoejdmsBIeXrE6nhS">
     </script>
 
 </head>
@@ -74,8 +74,13 @@
     <div id="paypal-button-container" class="row justify-content-center">
     </div>
 </div>
-<div  th:if="${session.userId}== null" class="row justify-content-center align-items-center"  style="height:90vh">
-    <a th:href="@{/login}" class="site-btn sb-c2">Login To make a payment</a>
+<div  th:if="${session.userId}== null" class="row justify-content-center align-items-center"  style="height:80vh">
+    <form style="display:inline" th:action="@{/signin}" method="post">
+        <input name="referer" th:if="${#strings.contains(#httpServletRequest.requestURI, 'error')}"  th:value="${#session.getAttribute('referer')}" style="opacity:0;width:1px">
+        <input name="referer" th:unless="${#strings.contains(#httpServletRequest.requestURI, 'error')}"  th:value="${#httpServletRequest.requestURI + '?years='+ param.years}" style="opacity:0;width:1px">
+
+        <button th:if="${session.userId}== null" class="site-btn sb-c2" type="submit" >Login To make a payment</button>
+    </form>
 </div>
 <!-- paypal buton -->
 
@@ -164,9 +169,7 @@
 <script src="js/main.js"></script>
 <form th:action="@{/payment_save}" method="post" >
     <input id="orderId" name="orderId">
-    <input id="userName" name="userName">
     <input id="amount2" name="price">
-    <input id="years" name="years" value="3">
     <button type="submit" id="paymentSuccessForm" >.</button>
 </form>
 

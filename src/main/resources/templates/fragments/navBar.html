@@ -16,7 +16,12 @@
                 <li><a th:href="@{/contact}">Contact</a></li>
             </ul>
             <div class="header-btns">
-                <a th:if="${session.userId}== null" th:href="@{/login}" class="site-btn sb-c2">Login</a>
+                <form style="display:inline" th:action="@{/signin}" method="post">
+                    <input name="referer" th:if="${#strings.contains(#httpServletRequest.requestURI, 'error')}"  th:value="${#session.getAttribute('referer')}" style="opacity:0">
+                    <input name="referer" th:unless="${#strings.contains(#httpServletRequest.requestURI, 'error')}"  th:value="${#httpServletRequest.requestURI}" style="opacity:0">
+
+                    <button th:if="${session.userId}== null" class="site-btn sb-c2" type="submit" >Login</button>
+                </form>
                 <a th:if="${session.userId}!= null" th:href="@{/logout}"  class="site-btn sb-c2">Logout</a>
                 <a th:if="${session.userId}!= null" th:href="@{/payment_success}"  class="site-btn sb-c2">My transactions</a>
                 <a th:if="${session.userId}==null" th:href="@{/registration}"  class="site-btn sb-c3">Register</a>
