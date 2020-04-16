@@ -31,9 +31,9 @@ public class Payment {
     public String getPaymentPage(@RequestParam String years, Model model)
     {
         Long years1 = Long.parseLong(years);
-        double amount = 331.2;
-        if(years1==4) amount = 441.6;
-        else if(years1==5) amount = 552;
+        double amount = 357.0;
+        if(years1==4) amount = 475.68;
+        else if(years1==5) amount = 594.60;
         model.addAttribute("amount",amount);
         List<String> countries = new ArrayList<String>();
         String[] isoCountries =Locale.getISOCountries();
