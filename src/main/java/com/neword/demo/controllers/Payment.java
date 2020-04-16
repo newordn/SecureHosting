@@ -35,6 +35,14 @@ public class Payment {
         if(years1==4) amount = 441.6;
         else if(years1==5) amount = 552;
         model.addAttribute("amount",amount);
+        List<String> countries = new ArrayList<String>();
+        String[] isoCountries =Locale.getISOCountries();
+
+        for (String country : isoCountries) {
+            Locale locale = new Locale("en", country);
+            countries.add(locale.getDisplayCountry());
+        }
+        model.addAttribute("countries",countries);
         return "payment/payment";
     }
     @GetMapping(value="/payment_success")
@@ -57,9 +65,9 @@ public class Payment {
         Long time = System.currentTimeMillis();
         Double price = Double.parseDouble(request.getParameter("price"));
         Map<Double,String> priceService = new HashMap<Double,String>();
-                priceService.put(331.2, "Ssl Certificates");
-                priceService.put(441.2, "Ssl Certificates");
-                priceService.put(552.0, "Ssl Certificates");
+                priceService.put(357.0, "Ssl Certificates");
+                priceService.put(475.68, "Ssl Certificates");
+                priceService.put(594.60, "Ssl Certificates");
                 priceService.put(215.64, "Cloud Hosting");
                 priceService.put(287.52, "Cloud Hosting");
                 priceService.put(359.4, "Cloud Hosting");
@@ -67,9 +75,9 @@ public class Payment {
         priceService.put(383.52, "VPS Hosting");
         priceService.put(479.4, "VPS Hosting");
                 Map<Double,String> priceYears = new HashMap<Double,String>();
-                priceYears.put(331.2,"3");
-                priceYears.put(441.2,"4");
-                priceYears.put(552.0,"5");
+                priceYears.put(357.0,"3");
+                priceYears.put(475.68,"4");
+                priceYears.put(594.60,"5");
                 // Cloud Hosting
                 priceYears.put(215.64, "3");
 

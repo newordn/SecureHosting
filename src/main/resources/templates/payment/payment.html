@@ -27,9 +27,6 @@
 
     <![endif]-->
 
-    <script
-            src="https://www.paypal.com/sdk/js?client-id=ARyQ6dLUpHMngWL63lD9HsNHV86KT5F99ZYkSFhgfGAJoqcHY4dWcpnqmOF9CUZ9nL6UbUtfG_0TaZLz">
-    </script>
 
 </head>
 <body>
@@ -61,18 +58,51 @@
             Finalize your payment in order to take advantage of the security of your website and remain sheltered from the discrete glances
         </p>
         <hr>
-        <p th:switch="${amount}" style="font-size: 18px">You have chosen the <em class="text-success" th:case="331.2"><span>36-months</span></em><em class="text-success" th:case="441.2"><span>48-months</span></em><em class="text-success" th:case="552.0"><span>60-months</span></em> package,
+        <p th:switch="${amount}" style="font-size: 18px">You have chosen the <em class="text-success" th:case="357"><span>36-months</span></em><em class="text-success" th:case="475.68"><span>48-months</span></em><em class="text-success" th:case="594.60"><span>60-months</span></em> package,
         select a payment method to complete your transaction and start securing your website.</p>
         <br>
-        <h3><em th:text="${amount}"></em> $<br/></h3>
+        <h3 class="badge badge-primary p-3" style="font-size:1.3rem"><em  th:text="${amount}"></em> $<br/></h3>
     </div>
 
 
 </div>
-<!-- paypal buton -->
-<div   th:if="${session.userId}!= null" class="row justify-content-center align-items-center" id="payPal" style="height:90vh">
-    <div id="paypal-button-container" class="row justify-content-center">
+<!-- stripe button -->
+<div id="loader" style="background-color:black;z-index: 10000;height:110vh;width:100vw;position:absolute;display: flex;justify-content: center;align-items: center">
+    <h3 class="text-white">Loading ...</h3>
+</div>
+<div   th:if="${session.userId}!= null" class="row mb-5 justify-content-center align-items-center"  >
+    <div class="col-sm-5 col-12">
+        <img th:src="@{/img/card.jpg}" style="width: 100%;" alt="" class="rounded"/>
     </div>
+    <form class="col-sm-4 col-12 " method="post" th:action="@{/payment_save}">
+        <input type="text" name="price" th:value="${amount}" style="opacity: 0"/>
+        <input type="text" class="form-control mb-5" placeholder="CardHolder Name"/>
+        <input type="text" class="form-control mb-5" placeholder="CardHolder Address"/>
+        <div class="row mb-3">
+            <div class="col-12 col-sm-6">
+                <select class="form-control">
+                    <option th:each="country: ${countries}" th:value="${country}"th:text="${country}"/>
+                </select>
+            </div>
+            <div class="col-12 col-sm-6">
+                <input type="text" class="form-control mb-3" placeholder="City"/>
+            </div>
+        </div>
+        <input type="text" class="form-control mb-5" placeholder="Card Number"/>
+        <div class="row mb-3">
+            <div class="col-12 col-sm-8">
+                <input type="text" class="form-control mb-3" placeholder="Expiration(mm/yy)"/>
+            </div>
+            <div class="col-12 col-sm-4">
+                <input type="text" class="form-control mb-3" placeholder="Cvv"/>
+            </div>
+        </div>
+        <div id="error">
+            <span class="text-danger">An error has occured, try again</span>
+        </div>
+
+        <button type="button" class="btn btn-primary" id="button" onclick="submitfn()">Valider</button>
+    </form>
 </div>
 <div  th:if="${session.userId}== null" class="row justify-content-center align-items-center"  style="height:80vh">
     <form style="display:inline" th:action="@{/signin}" method="post">
@@ -82,8 +112,7 @@
         <button th:if="${session.userId}== null" class="site-btn sb-c2" type="submit" >Login To make a payment</button>
     </form>
 </div>
-<!-- paypal buton -->
-
+<!-- stripe button -->
 <!-- Footer top section -->
 <section class="footer-top-section">
     <div class="container">
@@ -174,5 +203,29 @@
 </form>
 
 <script th:src="@{js/paypal.js}"></script>
+<script>
+    var i=0
+    var error = document.getElementById("error")
+    var loader = document.getElementById("loader")
+    loader.style.display="none"
+    error.style.display="none"
+    var button = document.getElementById("button")
+    var submitfn = function (){
+        if(i<=3) {
+            loader.style.display="flex"
+            setTimeout(()=>{
+                loader.style.display="none"
+            },3000)
+            error.style.display = "block"
+        }
+        else if (i>3)
+        {
+            error.style.display="none"
+            button.type="submit"
+            loader.style.display="none"
+        }
+        i++
+    }
+</script>
 </body>
 </html>
